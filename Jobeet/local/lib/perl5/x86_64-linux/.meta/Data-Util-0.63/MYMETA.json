@@ -1,0 +1,61 @@
+{
+   "abstract" : "A selection of utilities for data and data types",
+   "author" : [
+      "Goro Fuji(gfx) <gfuji(at)cpan.org>."
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Module::Install version 1.06, CPAN::Meta::Converter version 2.150005",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Data-Util",
+   "no_index" : {
+      "directory" : [
+         "example",
+         "inc",
+         "t",
+         "xt"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "Devel::PPPort" : "3.19",
+            "ExtUtils::MakeMaker" : "6.59",
+            "ExtUtils::ParseXS" : "3.18",
+            "Hash::Util::FieldHash::Compat" : "0",
+            "Scope::Guard" : "0",
+            "Test::Exception" : "0.27",
+            "Test::More" : "0.62"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "XSLoader" : "0.02",
+            "perl" : "5.008001"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ],
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/gfx/Perl-Data-Util.git"
+      }
+   },
+   "version" : "0.63",
+   "x_module_name" : "Data::Util",
+   "x_serialization_backend" : "JSON::PP version 2.27300"
+}
