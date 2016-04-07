@@ -21,7 +21,7 @@ __PACKAGE__->add_columns(
 	data_type	=> 'TEXT',
 	is_nullable	=> 0,
     },
-    token	=> VARCHAR(size => 80,),
+    token	=> VARCHAR,
     is_public	=> TINYINT(default_value => 1,),
     is_activated	=> TINYINT,
     email	=> VARCHAR,

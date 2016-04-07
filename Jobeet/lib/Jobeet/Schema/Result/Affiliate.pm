@@ -11,7 +11,7 @@ __PACKAGE__->add_columns(
     id		=> PK_INTEGER,
     url		=> VARCHAR,
     email	=> VARCHAR,
-    token	=> VARCHAR,
+    token	=> VARCHAR( size => 80, ),
     is_active	=> TINYINT,
     created_at	=> DATETIME,
 );

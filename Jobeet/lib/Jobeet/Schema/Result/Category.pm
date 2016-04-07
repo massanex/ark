@@ -22,7 +22,7 @@ __PACKAGE__->has_many(
         is_foreign_key_constraint   => 0,
         cascade_delete              => 0,
     },
-);
+ );
 
 __PACKAGE__->many_to_many( affiliates => category_affiliate => 'affiliate' );
 
