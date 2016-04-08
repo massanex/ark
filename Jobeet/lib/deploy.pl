@@ -5,11 +5,11 @@ use utf8;
 
 use Jobeet::Schema;
 # SQLite
-my $schema = Jobeet::Schema->connect('dbi:SQLite:./test.db');
+#my $schema = Jobeet::Schema->connect('dbi:SQLite:./test.db');
 # MySQL
-#my $schema = Jobeet::Schema->connect(
-#    'dbi:mysql:jobeetdb',
-#    'root',
-#    '',
-#);
+my $schema = Jobeet::Schema->connect(
+    'dbi:mysql:jobeetdb',
+    'root',
+    '',
+);
 $schema->deploy;

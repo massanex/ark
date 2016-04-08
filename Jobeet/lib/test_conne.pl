@@ -10,33 +10,38 @@ use Jobeet::Schema;
 
 # MySQL
 my $schema = Jobeet::Schema->connect(
-	'dbi:mysql:jobeetdb',
-	'root',
-	'',
+    'dbi:mysql:jobeetdb',
+    'root',
+    '',
 );
+
 # CONNECT
 my $category_rs = $schema->resultset('Category');
+
 # COUNT
 #print $category_rs->count;
+
 # SELECT ALL
 #my @all_categories = $schema->resultset('Category')->all;
 #foreach my $category (@all_categories) {
-#	print $category->name, "\n";
+#    print $category->name, "\n";
 #}
-## SELECT
-#my $category = $schema->resultset('Category')->search({ name => 'new category' });
-#while (my $aaa = $category_rs->next) {
-#	print $aaa->name;
+# SELECT
+#my $category_rs = $schema->resultset('Category')->search({ name => 'new category2' });
+#while (my $category = $category_rs->next) {
+#       print $category->name;
 #}
 # Dump
 #use Data::Dumper;
 #print Dumper $category;
+
 # INSERT
-#my $category = $category_rs->new({ name => 'new category2' });
-my $category = $category_rs->create({ name => 'new category2' });
-## UPDATE
-#$category_rs->update({ name => 'new category2' });
-## DELETE
-#$category_rs->search({ name => 'new category' })->delete();
+#my $category = $category_rs->create({
+#    name => 'new category5',
+#});
 
+# UPDATE
+#$category_rs->search({ name => 'new category3' })->update({ name => 'new category6' });
 
+# DELETE
+#$category_rs->search({ name => 'new category6' })->delete();
