@@ -36,9 +36,9 @@ my $category_rs = $schema->resultset('Category');
 #print Dumper $category;
 
 # INSERT
-#my $category = $category_rs->create({
-#    name => 'new category5',
-#});
+my $category = $category_rs->create({
+    name => 'new category6',
+});
 
 # UPDATE
 #$category_rs->search({ name => 'new category3' })->update({ name => 'new category6' });
