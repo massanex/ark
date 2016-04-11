@@ -1,3 +1,4 @@
+use v5.18.2;
 use strict;
 use warnings;
 use utf8;
@@ -15,7 +16,8 @@ GetOptions(
 my $dsn = models('conf')->{database}->[0];
 my $gd = GitDDL->new(
     work_tree => './',
-    ddl_file  => './schema.sql',
+#    ddl_file  => './schema.sql',
+    ddl_file  => './sql/schema.sql',
     dsn       => models('conf')->{database},
 );
 
@@ -23,10 +25,10 @@ my $db_version = '';
 eval {
     open my $fh, '>', \my $stderr;
     local *STDERR = $fh;
-    $db_version    = $gd->database_version;
+    $db_version = $gd->database_version;
 };
 
-if (!$db_version) {
+if ( !$db_version ) {
     $gd->deploy;
     say 'done migrate';
     exit;
@@ -35,7 +37,7 @@ if (!$db_version) {
 if ($gd->check_version) {
     say 'Database is already latest';
 } else {
-    print $gd->diff . "\n";
+    say $gd->diff . "\n";
     if (!$options{'dry-run'}) {
         $gd->upgrade_database;
         say 'done migrate';
