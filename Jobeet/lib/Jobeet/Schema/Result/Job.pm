@@ -38,7 +38,7 @@ __PACKAGE__->add_columns(
     },
     url => {
         data_type   => 'VARCHAR',
-        size        => 255,
+        size        => 128,
         is_nullable => 1,
     },
     expires_at	=> DATETIME,
