@@ -23,10 +23,6 @@ CREATE TABLE jobeet_something (
   json_column2 VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE git_ddl_version (
-  version VARCHAR(40) NOT NULL,
-);
-
 CREATE TABLE jobeet_job (
   id INTEGER unsigned NOT NULL auto_increment,
   category_id INTEGER unsigned NOT NULL,
