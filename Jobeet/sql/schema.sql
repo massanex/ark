@@ -37,7 +37,7 @@ CREATE TABLE jobeet_job (
   email VARCHAR(255) NOT NULL,
   company VARCHAR(255) NULL,
   logo VARCHAR(255) NULL,
-  url VARCHAR(255) NULL,
+  url VARCHAR(128) NULL,
   expires_at datetime NOT NULL,
   created_at datetime NOT NULL,
   updated_at datetime NOT NULL,
