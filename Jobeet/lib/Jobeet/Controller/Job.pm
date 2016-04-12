@@ -2,17 +2,27 @@ package Jobeet::Controller::Job;
 use Ark 'Controller';
 
 use Jobeet::Models;
-has '+namespace' => default => 'job';
+#has '+namespace' => default => 'job';
+#
+#sub auto :Private {
+#    1;
+#}
+#
+#sub index :Path :Args(0) {
+#    my ($self, $c) = @_;
+#}
+#
+#__PACKAGE__->meta->make_immutable;
 
-sub auto :Private {
-    1;
-}
-
-sub index :Path :Args(0) {
+# / （トップ）
+sub index :Path {
     my ($self, $c) = @_;
-}
 
-__PACKAGE__->meta->make_immutable;
+    $c->stash->{jobs} = models('Schema::Job');
+    #$c->stash->{jobs} = models('Schema::Job')->search({ expires_at => { '>=', models('Schema')->now }, });
+    #$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
+    #$c->stash->{categories} = models('Schema::Category')->get_with_jobs;
+}
 
 # /job/{job_token} （詳細）
 sub show :Path :Args(1) {
