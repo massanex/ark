@@ -36,11 +36,11 @@ __PACKAGE__->add_columns(
         size        => 255,
         is_nullable => 1,
     },
-    url => {
-        data_type   => 'VARCHAR',
-        size        => 255,
-        is_nullable => 1,
-    },
+#    url => {
+#        data_type   => 'VARCHAR',
+#        size        => 255,
+#        is_nullable => 1,
+#    },
     expires_at	=> DATETIME,
     created_at	=> DATETIME,
     updated_at	=> DATETIME,
