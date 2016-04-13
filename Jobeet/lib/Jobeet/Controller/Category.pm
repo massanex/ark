@@ -1,6 +1,5 @@
 package Jobeet::Controller::Category;
 use Ark 'Controller';
-
 use Jobeet::Models;
 
 sub show :Path :Args(1) {
@@ -15,7 +14,6 @@ sub show :Path :Args(1) {
         rows => models('conf')->{max_jobs_on_category},
         page => $c->req->parameters->{page} || 1,
     });
-
 }
 
 1;

@@ -49,13 +49,6 @@ sub update {
 }
 
 sub get_active_jobs {
-# 書き換え指示
-#    my $self = shift;
-#
-#    $self->jobs(
-#        { expires_at => { '>=', models('Schema')->now } },
-#        { order_by => { -desc => 'created_at' } }
-#    );
     my $self = shift;
     my $attr = shift || {};
 
@@ -64,7 +57,8 @@ sub get_active_jobs {
     $self->jobs(
         { expires_at => { '>=', models('Schema')->now } },
         {   order_by => { -desc => 'created_at' },
-            rows     => $attr->{rows},
+            defined $attr->{rows} ? (rows => $attr->{rows}) : (),
+            defined $attr->{page} ? (page => $attr->{page}) : (),
         }
     );
 }
