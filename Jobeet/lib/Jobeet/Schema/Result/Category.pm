@@ -52,13 +52,20 @@ sub get_active_jobs {
     my $self = shift;
     my $attr = shift || {};
 
-    $attr->{rows} ||= 10;
-
+    #$attr->{rows} ||= 10;
+#
+#    $self->jobs(
+#        { expires_at => { '>=', models('Schema')->now } },
+#        {   order_by => { -desc => 'created_at' },
+#            defined $attr->{rows} ? (rows => $attr->{rows}) : (),
+#            defined $attr->{page} ? (page => $attr->{page}) : (),
+#        }
+#    );
     $self->jobs(
-        { expires_at => { '>=', models('Schema')->now } },
+        { expires_at => { '>=', models('Schema')->now }, is_activated => 1 },
         {   order_by => { -desc => 'created_at' },
-            defined $attr->{rows} ? (rows => $attr->{rows}) : (),
-            defined $attr->{page} ? (page => $attr->{page}) : (),
+            defined $attr->{rows} ? ( rows => $attr->{rows} ) : (),
+            defined $attr->{page} ? ( page => $attr->{page} ) : (),
         }
     );
 }
