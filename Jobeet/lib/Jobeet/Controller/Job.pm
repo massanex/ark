@@ -18,10 +18,10 @@ use Jobeet::Models;
 sub index :Path {
     my ($self, $c) = @_;
 
-    $c->stash->{jobs} = models('Schema::Job');
+    #$c->stash->{jobs} = models('Schema::Job');
     #$c->stash->{jobs} = models('Schema::Job')->search({ expires_at => { '>=', models('Schema')->now }, });
     #$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
-    #$c->stash->{categories} = models('Schema::Category')->get_with_jobs;
+    #$c->stash->{categories} = models('Schema::Category')->get_active_jobs;
 }
 
 # /job/{job_token} （詳細）
