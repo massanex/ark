@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use parent 'Jobeet::Schema::ResultBase';
 use Jobeet::Schema::Types;
+use Jobeet::Models;
 use String::CamelCase qw(decamelize);
 
 __PACKAGE__->table('jobeet_category');

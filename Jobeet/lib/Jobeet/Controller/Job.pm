@@ -1,4 +1,5 @@
 package Jobeet::Controller::Job;
+use v5.18.2;
 use Ark 'Controller';
 
 use Jobeet::Models;
@@ -21,7 +22,7 @@ sub index :Path {
     #$c->stash->{jobs} = models('Schema::Job');
     #$c->stash->{jobs} = models('Schema::Job')->search({ expires_at => { '>=', models('Schema')->now }, });
     #$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
-    #$c->stash->{categories} = models('Schema::Category')->get_active_jobs;
+    $c->stash->{categories} = models('Schema::Category')->get_active_jobs;
 }
 
 # /job/{job_token} （詳細）
