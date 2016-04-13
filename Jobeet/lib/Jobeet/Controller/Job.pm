@@ -19,10 +19,20 @@ use Jobeet::Models;
 sub index :Path {
     my ($self, $c) = @_;
 
-    $c->stash->{jobs} = models('Schema::Job');
-    #$c->stash->{jobs} = models('Schema::Job')->search({ expires_at => { '>=', models('Schema')->now }, });
+    # SELECT ALL
+    #$c->stash->{jobs} = models('Schema::Job');
+    # 30日以内の投稿
+    #$c->stash->{jobs} = models('Schema::Job')->search({
+    #   created_at => { '>=', models('Schema')->now->add( days => -30 ) },
+    #);
+    # 30日以内の投稿、条件expires_at
+    #$c->stash->{jobs} = models('Schema::Job')->search({
+    #    expires_at => { '>=', models('Schema')->now },
+    #});
+    # Jobeet::Schema::ResultSet::Job の get_active_jobs を実行
     #$c->stash->{jobs} = models('Schema::Job')->get_active_jobs;
-    $c->stash->{categories} = models('Schema::Category')->get_active_jobs;
+    # Jobeet::Schema::ResultSet::Category の get_with_jobs を実行
+    $c->stash->{categories} = models('Schema::Category')->get_with_jobs;
 }
 
 # /job/{job_token} （詳細）

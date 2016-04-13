@@ -3,6 +3,7 @@ use v5.18.2;
 use strict;
 use warnings;
 use parent 'DBIx::Class::ResultSet';
+
 use Jobeet::Models;
 
 sub get_with_jobs {

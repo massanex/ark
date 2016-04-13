@@ -54,7 +54,8 @@ __PACKAGE__->belongs_to( category => 'Jobeet::Schema::Result::Category', 'catego
 sub insert {
     my $self = shift;
 
-    #$self->expires_at( models('Schema')->now->add( days => -30 ) );
+    #$self->expires_at( models('Schema')->now->add( days => 30 ) );
+    #$self->next::method(@_);
     $self->expires_at( models('Schema')->now->add( days => models('conf')->{active_days} ) );
     $self->next::method(@_);
 }

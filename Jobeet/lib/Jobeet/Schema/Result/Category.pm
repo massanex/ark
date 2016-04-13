@@ -30,19 +30,6 @@ __PACKAGE__->has_many(
 
 __PACKAGE__->many_to_many( affiliates => category_affiliate => 'affiliate' );
 
-sub get_active_jobs {
-    my $self = shift;
-    my $attr = shift || {};
-
-    $self->jobs(
-        { expires_at => { '>=', models('Schema')->now } },
-        {   order_by => { -desc => 'created_at' },
-            defined $attr->{rows} ? (rows => $attr->{rows}) : (),
-            defined $attr->{page} ? (page => $attr->{page}) : (),
-        }
-    );
-}
-
 sub insert {
     my $self = shift;
 
@@ -59,6 +46,27 @@ sub update {
     }
 
     $self->next::method(@_);
+}
+
+sub get_active_jobs {
+# 書き換え指示
+#    my $self = shift;
+#
+#    $self->jobs(
+#        { expires_at => { '>=', models('Schema')->now } },
+#        { order_by => { -desc => 'created_at' } }
+#    );
+    my $self = shift;
+    my $attr = shift || {};
+
+    $attr->{rows} ||= 10;
+
+    $self->jobs(
+        { expires_at => { '>=', models('Schema')->now } },
+        {   order_by => { -desc => 'created_at' },
+            rows     => $attr->{rows},
+        }
+    );
 }
 
 1;
