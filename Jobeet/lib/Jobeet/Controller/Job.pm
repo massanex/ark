@@ -1,19 +1,9 @@
 package Jobeet::Controller::Job;
 use v5.18.2;
 use Ark 'Controller';
+with 'Ark::ActionClass::Form';
 
 use Jobeet::Models;
-#has '+namespace' => default => 'job';
-#
-#sub auto :Private {
-#    1;
-#}
-#
-#sub index :Path :Args(0) {
-#    my ($self, $c) = @_;
-#}
-#
-#__PACKAGE__->meta->make_immutable;
 
 # / （トップ）
 sub index :Path {
@@ -58,6 +48,13 @@ sub edit :Chained('job') :PathPart :Args(0) {
 # /job/{job_token}/delete （削除）
 sub delete :Chained('job') :PathPart :Args(0) {
     my ($self, $c) = @_;
+}
+
+# Form
+sub create :Local :Form('Jobeet::Form::Job') {
+    my ($self, $c) = @_;
+
+    $c->stash->{form} = $self->form;
 }
 
 1;
