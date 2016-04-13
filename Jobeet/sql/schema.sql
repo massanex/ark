@@ -14,8 +14,10 @@ CREATE TABLE jobeet_affiliate (
 CREATE TABLE jobeet_category (
   id INTEGER unsigned NOT NULL auto_increment,
   name VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NULL,
   PRIMARY KEY (id),
-  UNIQUE jobeet_category_name (name)
+  UNIQUE jobeet_category_name (name),
+  UNIQUE jobeet_category_slug (slug)
 ) ENGINE=InnoDB;
 
 CREATE TABLE jobeet_something (
