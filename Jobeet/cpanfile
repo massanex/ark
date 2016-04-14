@@ -10,3 +10,4 @@ requires 'GitDDL';
 requires 'Path::Class';
 requires 'DateTime::Format::SQLite';
 requires 'DateTime::Format::MySQL';
+requires 'CGI::Simple';
