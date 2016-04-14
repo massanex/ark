@@ -65,11 +65,23 @@ sub edit :Chained('job') :PathPart :Form('Jobeet::Form::Job') {
 }
 
 # Form確認用詳細
+#sub show :Path :Args(1) {
+#    my ($self, $c, $job_token) = @_;
+#
+#    $c->stash->{job} = models('Schema::Job')->find({ token => $job_token })
+#        or $c->detach('/default');
+#}
 sub show :Path :Args(1) {
     my ($self, $c, $job_token) = @_;
 
     $c->stash->{job} = models('Schema::Job')->find({ token => $job_token })
         or $c->detach('/default');
+
+    my $history = $c->session->get('job_history') || [];
+
+    unshift @$history, { $c->stash->{job}->get_columns };
+
+    $c->session->set( job_history => $history );
 }
 
 # Form 削除用
