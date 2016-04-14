@@ -2,7 +2,7 @@
 #    default_view => 'MT',
 #}
 
-#my $home = Jobeet::Models->get('home');
+my $home = Jobeet::Models->get('home');
 
 # SQLite
 #return {
@@ -15,8 +15,8 @@
 #};
 
 return {
-    default_view => 'MT',
-    active_days => 30,
+    default_view         => 'MT',
+    active_days          => 30,
     max_jobs_on_homepage => 10,
     max_jobs_on_category => 20,
     database => [
@@ -26,4 +26,10 @@ return {
              on_connect_do     => ['SET NAMES utf8'],
          },
     ],
+    cache => {
+        share_file     => $home->file('tmp', 'cache')->stringify,
+        unlink_on_exit => 0,
+    },
 };
+
+

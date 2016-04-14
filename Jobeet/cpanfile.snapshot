@@ -122,6 +122,16 @@ DISTRIBUTIONS
       Test::More 0
       parent 0
       perl 5.008001
+  CGI-Simple-1.115
+    pathname: S/SZ/SZABGAB/CGI-Simple-1.115.tar.gz
+    provides:
+      CGI::Simple 1.115
+      CGI::Simple::Cookie 1.114
+      CGI::Simple::Standard 1.114
+      CGI::Simple::Util 1.114
+    requirements:
+      IO::Scalar 0
+      Test::More 0
   CPAN-Meta-2.150005
     pathname: D/DA/DAGOLDEN/CPAN-Meta-2.150005.tar.gz
     provides:
@@ -159,6 +169,14 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
+  Cache-FastMmap-1.43
+    pathname: R/RO/ROBM/Cache-FastMmap-1.43.tar.gz
+    provides:
+      Cache::FastMmap 1.43
+      Cache::FastMmap::OnLeave 1.43
+    requirements:
+      ExtUtils::MakeMaker 0
+      Storable 0
   Capture-Tiny-0.36
     pathname: D/DA/DAGOLDEN/Capture-Tiny-0.36.tar.gz
     provides:
@@ -247,6 +265,11 @@ DISTRIBUTIONS
       Class::Data::Inheritable 0.08
     requirements:
       ExtUtils::MakeMaker 0
+  Class-Factory-Util-1.7
+    pathname: D/DR/DROLSKY/Class-Factory-Util-1.7.tar.gz
+    provides:
+      Class::Factory::Util 1.7
+    requirements:
   Class-Inspector-1.28
     pathname: A/AD/ADAMK/Class-Inspector-1.28.tar.gz
     provides:
@@ -672,6 +695,64 @@ DISTRIBUTIONS
       vars 0
       warnings 0
       warnings::register 0
+  DateTime-Format-Builder-0.81
+    pathname: D/DR/DROLSKY/DateTime-Format-Builder-0.81.tar.gz
+    provides:
+      DateTime::Format::Builder 0.81
+      DateTime::Format::Builder::Parser 0.81
+      DateTime::Format::Builder::Parser::Dispatch 0.81
+      DateTime::Format::Builder::Parser::Quick 0.81
+      DateTime::Format::Builder::Parser::Regex 0.81
+      DateTime::Format::Builder::Parser::Strptime 0.81
+      DateTime::Format::Builder::Parser::generic 0.81
+      DateTime::Format::Fall undef
+      DateTime::Format::Simple undef
+    requirements:
+      Carp 0
+      Class::Factory::Util 1.6
+      DateTime 1.00
+      DateTime::Format::Strptime 1.04
+      ExtUtils::MakeMaker 6.30
+      Params::Validate 0.72
+      Scalar::Util 0
+      base 0
+      strict 0
+      vars 0
+      warnings 0
+  DateTime-Format-MySQL-0.06
+    pathname: X/XM/XMIKEW/DateTime-Format-MySQL-0.06.tar.gz
+    provides:
+      DateTime::Format::MySQL 0.06
+    requirements:
+      DateTime 0
+      DateTime::Format::Builder 0.6
+      Module::Build 0
+  DateTime-Format-SQLite-0.11
+    pathname: C/CF/CFAERBER/DateTime-Format-SQLite-0.11.tar.gz
+    provides:
+      DateTime::Format::SQLite 0.11
+    requirements:
+      DateTime 0.1
+      DateTime::Format::Builder 0.6
+      ExtUtils::MakeMaker 0
+      perl 5.003
+  DateTime-Format-Strptime-1.67
+    pathname: D/DR/DROLSKY/DateTime-Format-Strptime-1.67.tar.gz
+    provides:
+      DateTime::Format::Strptime 1.67
+    requirements:
+      Carp 0
+      DateTime 1.00
+      DateTime::Locale 0.45
+      DateTime::TimeZone 0.79
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      Package::DeprecationManager 0.15
+      Params::Validate 1.20
+      Try::Tiny 0
+      constant 0
+      strict 0
+      warnings 0
   DateTime-Locale-1.03
     pathname: D/DR/DROLSKY/DateTime-Locale-1.03.tar.gz
     provides:
@@ -1305,6 +1386,55 @@ DISTRIBUTIONS
       Module::Build 0.38
       Scalar::Util 1.19
       perl 5.008001
+  Git-Repository-1.318
+    pathname: B/BO/BOOK/Git-Repository-1.318.tar.gz
+    provides:
+      Git::Repository 1.318
+      Git::Repository::Command 1.318
+      Git::Repository::Plugin 1.318
+      Test::Git 1.318
+    requirements:
+      Carp 0
+      Cwd 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Spec::Functions 0
+      File::Temp 0
+      Git::Version::Compare 1.001
+      IO::Handle 0
+      Scalar::Util 0
+      System::Command 1.103
+      Test::Builder 0
+      namespace::clean 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Git-Version-Compare-1.001
+    pathname: B/BO/BOOK/Git-Version-Compare-1.001.tar.gz
+    provides:
+      Git::Version::Compare 1.001
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      namespace::clean 0
+      perl 5.006
+      strict 0
+      warnings 0
+  GitDDL-0.03
+    pathname: T/TY/TYPESTER/GitDDL-0.03.tar.gz
+    provides:
+      GitDDL 0.03
+    requirements:
+      DBI 0
+      ExtUtils::MakeMaker 6.36
+      File::Path 2.07
+      Git::Repository 0
+      Mouse 0
+      SQL::Translator 0.11016
+      Test::Git 0
+      Test::More 0.86
   HTML-Escape-1.10
     pathname: T/TO/TOKUHIROM/HTML-Escape-1.10.tar.gz
     provides:
@@ -1498,6 +1628,35 @@ DISTRIBUTIONS
       IO::Socket 0
       Socket 1.97
       Test::More 0.88
+  IO-stringy-2.111
+    pathname: D/DS/DSKOLL/IO-stringy-2.111.tar.gz
+    provides:
+      IO::AtomicFile 2.111
+      IO::Clever 1.01
+      IO::InnerFile 2.111
+      IO::Lines 2.111
+      IO::Scalar 2.111
+      IO::ScalarArray 2.111
+      IO::Stringy 2.111
+      IO::Wrap 2.111
+      IO::WrapTie 2.111
+      IO::WrapTie::Master 2.111
+      IO::WrapTie::Slave 2.111
+    requirements:
+      ExtUtils::MakeMaker 0
+  IPC-Run-0.94
+    pathname: T/TO/TODDR/IPC-Run-0.94.tar.gz
+    provides:
+      IPC::Run 0.94
+      IPC::Run::Debug 0.90
+      IPC::Run::IO 0.90
+      IPC::Run::Timer 0.90
+      IPC::Run::Win32Helper 0.90
+      IPC::Run::Win32IO 0.90
+      IPC::Run::Win32Pump 0.90
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0.47
   Import-Into-1.002005
     pathname: H/HA/HAARG/Import-Into-1.002005.tar.gz
     provides:
@@ -1940,6 +2099,21 @@ DISTRIBUTIONS
       POSIX 0
       Time::Local 0
       perl 5.008001
+  Package-DeprecationManager-0.16
+    pathname: D/DR/DROLSKY/Package-DeprecationManager-0.16.tar.gz
+    provides:
+      Package::DeprecationManager 0.16
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 0
+      List::Util 1.33
+      Package::Stash 0
+      Params::Util 0
+      Sub::Install 0
+      Sub::Name 0
+      namespace::autoclean 0
+      strict 0
+      warnings 0
   Package-Stash-0.37
     pathname: D/DO/DOY/Package-Stash-0.37.tar.gz
     provides:
@@ -2385,6 +2559,13 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0.88
+  Sub-Identify-0.12
+    pathname: R/RG/RGARCIA/Sub-Identify-0.12.tar.gz
+    provides:
+      Sub::Identify 0.12
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
   Sub-Install-0.928
     pathname: R/RJ/RJBS/Sub-Install-0.928.tar.gz
     provides:
@@ -2414,6 +2595,28 @@ DISTRIBUTIONS
     requirements:
       Carp 0
       ExtUtils::MakeMaker 6.17
+      constant 0
+      perl 5.006
+      strict 0
+      warnings 0
+  System-Command-1.117
+    pathname: B/BO/BOOK/System-Command-1.117.tar.gz
+    provides:
+      System::Command 1.117
+      System::Command::Reaper 1.117
+    requirements:
+      Carp 0
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      IO::Handle 0
+      IO::Select 0
+      IPC::Run 0
+      List::Util 0
+      POSIX 0
+      Scalar::Util 0
+      Symbol 0
       constant 0
       perl 5.006
       strict 0
@@ -2893,6 +3096,19 @@ DISTRIBUTIONS
       Lexical::SealRequireHints 0.005
       Test::More 0.88
       XSLoader 0
+      strict 0
+      warnings 0
+  namespace-autoclean-0.28
+    pathname: E/ET/ETHER/namespace-autoclean-0.28.tar.gz
+    provides:
+      namespace::autoclean 0.28
+    requirements:
+      B::Hooks::EndOfScope 0.12
+      ExtUtils::MakeMaker 0
+      List::Util 0
+      Sub::Identify 0
+      namespace::clean 0.20
+      perl 5.006
       strict 0
       warnings 0
   namespace-clean-0.26

@@ -1,3 +1,4 @@
+<table class="jobs">
 ? my @jobs = @_;
 <table class="jobs">
 ? my $i = 0;
