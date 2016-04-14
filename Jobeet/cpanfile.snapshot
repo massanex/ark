@@ -1676,6 +1676,17 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0
+  JSON-Any-1.39
+    pathname: E/ET/ETHER/JSON-Any-1.39.tar.gz
+    provides:
+      JSON::Any 1.39
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 0
+      constant 0
+      perl 5.008
+      strict 0
+      warnings 0
   LWP-MediaTypes-6.02
     pathname: G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz
     provides:
