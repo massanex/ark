@@ -27,4 +27,30 @@ sub create_from_form {
     $job;
 }
 
+# 16日目
+sub latest_post {
+    my ($self) = @_;
+
+    my $r = $self->search( { is_activated => 1, },
+        { order_by => { -desc => 'created_at' } } );
+
+    $r->first;
+}
+
+# 17日目
+sub search_fulltext {
+    my ($self, $word) = @_;
+
+    my $r = $self->search(
+        {
+            is_activated => 1,
+            -or          => [
+                { description  => { -like => "%${word}%", } },
+                { how_to_apply => { -like => "%${word}%", } },
+            ]
+        },
+        { order_by => { -desc => 'created_at' }, rows => 20 }
+    );
+}
+
 1;

@@ -4,6 +4,7 @@ use Ark 'Controller';
 with 'Ark::ActionClass::Form';
 
 use Jobeet::Models;
+use DateTime::Format::W3CDTF;
 
 # / （トップ）
 sub index :Path {
@@ -100,6 +101,17 @@ sub publish :Chained('job') :PathPart {
 
     $job->publish;
     $c->redirect( $c->uri_for('/job', $job->token) );
+}
+
+# 16日目
+sub atom :Local {
+    my ($self, $c) = @_;
+    $c->res->content_type('application/atom+xml; charset=utf-8');
+
+    $c->stash->{w3c_date} = DateTime::Format::W3CDTF->new;
+    $c->stash->{latest_post} = models('Schema::Job')->latest_post;
+
+    $c->forward('index');
 }
 
 1;

@@ -12,3 +12,4 @@ requires 'DateTime::Format::SQLite';
 requires 'DateTime::Format::MySQL';
 requires 'CGI::Simple';
 requires 'Cache::FastMmap';
+requires 'JSON::Any';

@@ -3,6 +3,7 @@
   <head>
     <title><? block title => sub { 'Jobeet - Your best job board' } ?></title>
     <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="alternate" type="application/atom+xml" title="Latest Jobs" href="<?= $c->uri_for('/job/atom') ?>" />
     <? block javascripts => '' ?>
     <? block stylesheets => '' ?>
   </head>
@@ -24,8 +25,8 @@
 
             <div class="search">
               <h2>Ask for a job</h2>
-              <form action="" method="get">
-                <input type="text" name="keywords"
+              <form action="<?= $c->uri_for('/search') ?>" method="get">
+                <input type="text" name="q"
                   id="search_keywords" />
                 <input type="submit" value="search" />
                 <div class="help">
@@ -71,7 +72,7 @@
           </span>
           <ul>
             <li><a href="">About Jobeet</a></li>
-            <li class="feed"><a href="">Full feed</a></li>
+            <li class="feed"><a href="<?= $c->uri_for('/job/atom') ?>">Full feed</a></li>
             <li><a href="">Jobeet API</a></li>
             <li class="last"><a href="">Affiliates</a></li>
           </ul>
